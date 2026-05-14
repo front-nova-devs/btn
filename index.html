@@ -3,29 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BTN - Botón</title>
+  <title>Texto Animado</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Botón principal -->
-  <button type="button" id="btn-principal">
-    Haz clic aquí
-  </button>
+  <main class="container">
+    <h1 class="animated-text" id="animatedText"></h1>
+    <button class="refresh-btn" id="refreshBtn">↻ Refrescar</button>
+  </main>
 
-  <!-- Botón de envío de formulario -->
-  <button type="submit" id="btn-enviar">
-    Enviar
-  </button>
+  <script>
+    const text = "Bienvenido a mi página";
+    const element = document.getElementById("animatedText");
+    const refreshBtn = document.getElementById("refreshBtn");
 
-  <!-- Botón de reset -->
-  <button type="reset" id="btn-reset">
-    Limpiar
-  </button>
+    function animateText() {
+      element.innerHTML = "";
+      [...text].forEach((char, i) => {
+        const span = document.createElement("span");
+        span.textContent = char === " " ? "\u00A0" : char;
+        span.style.animationDelay = `${i * 0.08}s`;
+        span.classList.add("letter");
+        element.appendChild(span);
+      });
+    }
 
-  <!-- Botón deshabilitado -->
-  <button type="button" id="btn-deshabilitado" disabled>
-    Deshabilitado
-  </button>
-
+    refreshBtn.addEventListener("click", animateText);
+    animateText();
+  </script>
 </body>
 </html>
