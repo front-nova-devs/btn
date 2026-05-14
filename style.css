@@ -59,7 +59,7 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: blurScaleIn 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55) both;
+  animation: blurScaleIn 0.25s ease-out both;
 }
 
 @keyframes blurScaleIn {
