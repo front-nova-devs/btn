@@ -55,4 +55,4 @@ Update the CSS variables in `style.css` to match your brand:
 Distributed under the MIT License. See `LICENSE` for more information.
 
 ---
-Created with ❤️ by [svasquez](https://github.com/svasquez)
+Created with ❤️ by [Sebastian Vasquez Echavarria](https://sebas-dev.vercel.app/)
